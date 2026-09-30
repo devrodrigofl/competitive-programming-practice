@@ -6,16 +6,9 @@ TEMPLATE := $(ROOT)Snippets/template.cpp
 CXXFLAGS = -I$(ROOT) -fsanitize=address,undefined -fno-omit-frame-pointer -g -Wall -Wshadow -std=c++17 \
            -Wno-unused-result -Wno-sign-compare -Wno-char-subscripts
 
-# Evita que o make tente "refazer" o próprio Makefile
-$(MAKEFILE): ;
-
-# make nome.cpp -> cria nome.cpp no diretório atual a partir do template
 %.cpp:
-	@test -f $(TEMPLATE) || { echo "Template não encontrado: $(TEMPLATE)"; exit 1; }
 	@cp $(TEMPLATE) $@
-	@echo "Criado $@ a partir do template"
 
-# make nome -> compila e executa
 %: %.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 	./$@
