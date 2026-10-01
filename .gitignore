@@ -1,2 +1,7 @@
-# .gitignore
-bits/*.pch
+*
+!*/
+*.dSYM/
+!*.cpp
+!*.h
+!Makefile
+!.gitignore

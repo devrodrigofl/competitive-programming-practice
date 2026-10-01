@@ -1,8 +1,6 @@
 //https://codeforces.com/gym/102215/problem/J
-// g++ 102215.cpp -o 102215 && ./102215
 
-// #include <bits/stdc++.h>
-#include "../bits/stdc++.h"
+#include <bits/stdc++.h>
 
 using namespace std;
 
