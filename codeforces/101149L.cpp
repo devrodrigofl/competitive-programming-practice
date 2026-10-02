@@ -2,8 +2,7 @@
 
 // g++ 101149L.cpp -o 101149L && ./101149L
 
-// #include <bits/stdc++.h>
-#include "../bits/stdc++.h"
+#include <bits/stdc++.h>
 
 using namespace std;
 
