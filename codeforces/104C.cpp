@@ -18,18 +18,10 @@ vector<bool> visited;
 int cont = 0;
 
 void dfs(int u, int f) {
-    cout << u << endl;
     visited[u] = true;
     for(auto& x : adj[u]) {
-        if(u == 9) cout << "x " << x << endl;
-        if(visited[x] && x != f) {
-            cont++;
-            cout << "x: " << x << endl;
-            cout << "u: " << u << endl;
-        }
-
-        if(!visited[x]) {
-            dfs(x, u);}
+        if(visited[x] && x != f) cont++;
+        if(!visited[x]) dfs(x, u);
     }
 }
 
@@ -49,7 +41,14 @@ int main(){ _
 
     dfs(1, 0);
 
-    if(cont == 1) cout << "FHTAGN!" << endl;
+    bool conx = true;
+    for(int i = 1; i < n+1; i++) {
+        if(!visited[i]) {
+            conx = false;
+        }
+    }
+
+    if(cont/2 == 1 && conx) cout << "FHTAGN!" << endl;
     else cout << "NO" << endl;
 
     return 0;
